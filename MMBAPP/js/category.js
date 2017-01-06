@@ -10,9 +10,10 @@ $(function() {
 
     // var  = $('#menu');
     setCategoryTitle($('#category > .row'));
+
     function setCategoryTitle(dom, callback) {
         $.ajax({
-            "url": "http://mmb.ittun.com/api/getcategorytitle",
+            "url": "http://127.0.0.1:9090/api/getcategorytitle",
             success: function(data) {
                 data = data.result;
                 var titleHtml = '<ul class="category-title">';
@@ -35,25 +36,26 @@ $(function() {
             var that = $(this);
             $(this).parent().find('ul').toggleClass('hide');
             $.ajax({
-                    url: "http://mmb.ittun.com/api/getcategory",
-                    data: { "titleid": $(this).data('titleId') },
-                    success: function(data) {
-                        data = data.result;
-                        var categoryHtml = '<ul class="category-content clearfix">';
-                        for (var i = 0; i < data.length; i++) {
-                            categoryHtml += '<li>';
-                            categoryHtml += '<a href="productlist.html?categoryid='+data[i].categoryId+'&category='+data[i].category+'&pageid=1" data-category-id="' + data[i].categoryId + '">';
-                            categoryHtml += data[i].category;
-                            categoryHtml += '</a>';
-                            categoryHtml += '</li>';
-                        }
-                        categoryHtml += "</ul>";
-                        that.parent().append(categoryHtml);
+                url: "http://127.0.0.1:9090/api/getcategory",
+                data: { "titleid": $(this).data('titleId') },
+                success: function(data) {
+                    data = data.result;
+                    var categoryHtml = '<ul class="category-content clearfix">';
+                    for (var i = 0; i < data.length; i++) {
+                        categoryHtml += '<li>';
+                        categoryHtml += '<a href="productlist.html?categoryid=' + data[i].categoryId + '&category=' + data[i].category + '&pageid=1" data-category-id="' + data[i].categoryId + '">';
+                        categoryHtml += data[i].category;
+                        categoryHtml += '</a>';
+                        categoryHtml += '</li>';
                     }
-                })
+                    categoryHtml += "</ul>";
+                    that.parent().append(categoryHtml);
+                }
+            })
         })
         $(dom).on('click', function() {
-            $(this).parent().find('ul').toggleClass('hide');
+            $('.category-title').find("ul").fadeOut();
+            $(this).parent().find('ul').fadeToggle();
         })
     }
 });

@@ -1,10 +1,3 @@
-/*
- * @Author: zhengwei
- * @Date:   2016-10-26 10:56:13
- * @Last Modified by:   zwxs
- * @Last Modified time: 2016-10-27 16:58:48
- */
-
 'use strict';
 
 setShop($('.popsort'))
@@ -14,7 +7,7 @@ setFilter($('.filter'));
 
 function setShop(dom, callback) {
     $.ajax({
-        url: "http://mmb.ittun.com/api/getgsshop",
+        url: "http://127.0.0.1:9090/api/getgsshop",
         success: function(data) {
             var html = template('gsShop', data);
             dom.html(html);
@@ -25,7 +18,7 @@ function setShop(dom, callback) {
 
 function setArea(dom, callback) {
     $.ajax({
-        url: "http://mmb.ittun.com/api/getgsshoparea",
+        url: "http://127.0.0.1:9090/api/getgsshoparea",
         success: function(data) {
             var html = template('gsArea', data);
             dom.html(html);
@@ -35,7 +28,7 @@ function setArea(dom, callback) {
 
 function setProductList(dom, data, callback) {
     $.ajax({
-        url: "http://mmb.ittun.com/api/getgsproduct",
+        url: "http://127.0.0.1:9090/api/getgsproduct",
         data: { 'shopid': data.shopid || 0, 'areaid': data.areaid || 0 },
         success: function(data) {
             var html = template('gsProductList', data);
@@ -52,6 +45,7 @@ function setFilter(dom, data, callback) {
 
 
 function SelectShow(selectname) {
+    $('#' + selectname).siblings().removeClass("on");
     $('#' + selectname).toggleClass('on');
 }
 

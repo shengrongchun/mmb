@@ -11,7 +11,7 @@ $(function() {
 
     function setProductList(dom, callback) {
         $.ajax({
-            url: "http://mmb.ittun.com/api/getinlanddiscount",
+            url: "http://127.0.0.1:9090/api/getinlanddiscount",
             success: function(data) {
                 var html = template("productList", data);
                 dom.html(html);

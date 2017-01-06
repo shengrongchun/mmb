@@ -11,8 +11,8 @@ $(function() {
 
     function setMoneyCtrlProduct(dom, pageid, callback) {
         $.ajax({
-            url: "http://mmb.ittun.com/api/getmoneyctrl",
-            data:{'pageid':pageid-1},
+            url: "http://127.0.0.1:9090/api/getmoneyctrl",
+            data: { 'pageid': pageid - 1 },
             success: function(data) {
                 data.pageCount = Math.floor(data.totalCount / data.pagesize);
                 data.pageid = pageid || 1;
@@ -24,7 +24,7 @@ $(function() {
                 dom.html(html);
                 $('#selectPage').on('change', function(e) {
                     window.location.href = "moneyctrl.html?pageid=" + $(this).val();
-                    $(this).attr('selected',"selected");
+                    $(this).attr('selected', "selected");
                 })
             }
         });

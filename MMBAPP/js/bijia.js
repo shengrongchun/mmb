@@ -13,7 +13,7 @@ $(function() {
 
     function setBijiaProduct(dom, productid, callback) {
         $.ajax({
-            url: "http://mmb.ittun.com/api/getproduct",
+            url: "http://127.0.0.1:9090/api/getproduct",
             data: { "productid": productid || 0 },
             success: function(data) {
                 data = data.result;
@@ -30,7 +30,7 @@ $(function() {
 
     function setComList(dom, productid, callback) {
         $.ajax({
-            url: "http://mmb.ittun.com/api/getproductcom",
+            url: "http://127.0.0.1:9090/api/getproductcom",
             data: { 'productid': productid || 0 },
             success: function(data) {
                 data = data.result;
@@ -62,13 +62,13 @@ $(function() {
 
     function setProductListTitle(dom, productid, callback) {
         $.ajax({
-            url: "http://mmb.ittun.com/api/getproduct",
+            url: "http://127.0.0.1:9090/api/getproduct",
             data: { 'productid': productid || 0 },
             success: function(data) {
                 data = data.result;
                 if (data.length > 0) {
                     $.ajax({
-                        url: "http://mmb.ittun.com/api/getcategorybyid",
+                        url: "http://127.0.0.1:9090/api/getcategorybyid",
                         data: { "categoryid": data[0].categoryId || 0 },
                         success: function(result) {
                             result = result.result;

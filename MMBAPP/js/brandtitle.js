@@ -11,7 +11,7 @@ $(function() {
 
     function setCategoryTitle(dom, callback) {
         $.ajax({
-            "url": "http://mmb.ittun.com/api/getbrandtitle",
+            "url": "http://127.0.0.1:9090/api/getbrandtitle",
             success: function(data) {
                 data = data.result;
                 var titleHtml = '<ul class="category-title">';

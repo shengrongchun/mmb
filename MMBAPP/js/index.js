@@ -11,7 +11,7 @@ $(function() {
 
     function setMenu(dom, callback) {
         $.ajax({
-            "url": "http://mmb.ittun.com/api/getindexmenu",
+            "url": "http://127.0.0.1:9090/api/getindexmenu",
             dataType: 'jsonp',
             jsonp: "callback",
             success: function(data) {
@@ -34,14 +34,14 @@ $(function() {
 
     function menuMore(dom, callback) {
         $(dom).on('click', function() {
-            $('#menu > .row > .menu-item:nth-last-child(-n+4)').toggleClass('hide');
+            $('#menu > .row > .menu-item:nth-last-child(-n+4)').fadeToggle();
         })
     }
     setMoneyCtrlProduct($('.product-list'));
 
     function setMoneyCtrlProduct(dom, pageid, callback) {
         $.ajax({
-            url: "http://mmb.ittun.com/api/getmoneyctrl",
+            url: "http://127.0.0.1:9090/api/getmoneyctrl",
             dataType: 'jsonp',
             jsonp: "callback",
             success: function(data) {

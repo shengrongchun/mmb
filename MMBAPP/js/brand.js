@@ -11,7 +11,7 @@ $(function() {
 
     function setBrandList(dom, brandtitleid, callback) {
         $.ajax({
-            url: "http://mmb.ittun.com/api/getbrand",
+            url: "http://127.0.0.1:9090/api/getbrand",
             data: { "brandtitleid": brandtitleid },
             "success": function(data) {
                 var html = template('brandList', data);
@@ -24,7 +24,7 @@ $(function() {
 
     function setBrandProduct(dom, brandtitleid, callback) {
         $.ajax({
-            url: "http://mmb.ittun.com/api/getbrandproductlist",
+            url: "http://127.0.0.1:9090/api/getbrandproductlist",
             data: { "brandtitleid": brandtitleid, "pagesize": 4 },
             success: function(data) {
                 var html = template('brandProduct', data);
@@ -40,13 +40,13 @@ $(function() {
             productid.push(productlist[i].productId);
         }
         $.ajax({
-            url: "http://mmb.ittun.com/api/getproduct",
+            url: "http://127.0.0.1:9090/api/getproduct",
             data: { "productid": productid[0] },
             success: function(result) {
                 result = result.result;
                 for (var j = 0; j < result.length; j++) {
                     $.ajax({
-                        url: "http://mmb.ittun.com/api/getproductcom",
+                        url: "http://127.0.0.1:9090/api/getproductcom",
                         data: { "productid": productid[0] },
                         success: function(data) {
                             data = data.result;

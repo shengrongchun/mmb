@@ -12,7 +12,7 @@ $(function() {
 
     function setTitle(dom, titleid) {
         $.ajax({
-            url: "http://mmb.ittun.com/api/getbaicaijiatitle",
+            url: "http://127.0.0.1:9090/api/getbaicaijiatitle",
             success: function(data) {
                 var html = template('bcjTitle', data);
                 dom.html(html);
@@ -101,7 +101,7 @@ $(function() {
 
     function setProductList(dom, titleid, callback) {
         $.ajax({
-            url: "http://mmb.ittun.com/api/getbaicaijiaproduct",
+            url: "http://127.0.0.1:9090/api/getbaicaijiaproduct",
             data: { "titleid": titleid || 0 },
             success: function(data) {
                 var html = template('bcjProductList', data);

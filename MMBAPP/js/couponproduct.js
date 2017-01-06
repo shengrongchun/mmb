@@ -11,7 +11,7 @@ $(function() {
 
     function setCouponList(dom, couponid, callback) {
         $.ajax({
-            url: 'http://mmb.ittun.com/api/getcouponproduct',
+            url: 'http://127.0.0.1:9090/api/getcouponproduct',
             data: { 'couponid': couponid },
             success: function(data) {
                 var html = template('couponList', data);
