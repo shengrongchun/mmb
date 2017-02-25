@@ -1,10 +1,3 @@
-/*
- * @Author: zhengwei
- * @Date:   2016-10-20 10:29:50
- * @Last Modified by:   zwxs
- * @Last Modified time: 2016-10-27 17:00:05
- */
-
 'use strict';
 $(function() {
 

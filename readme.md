@@ -78,5 +78,134 @@
 
 3. 学会看懂并调用后台给的API实现功能 并且看不懂的情况学会询问后台
 
-4. 学会整个项目的开发流程和项目周期# mmb
-# mmb
+4. 学会整个项目的开发流程和项目周期
+#在项目中使用gulp打包项目
+## gulp入门中文
+  [官网](http://www.gulpjs.com)
+  [中文网](http://www.gulpjs.com.cn)
+
+- 前端自动化构建工具
+  js压缩,混淆
+  合并.
+  css压缩
+  html压缩
+###其他自动化够构建工具
+- grunt ,webpack...
+
+
+### gulp的5个核心方法
+  - task,gulp中是一个个任务的形式来实现功能。
+    + task('任务名',function(){
+      .....
+    });
+  - src
+    + src('./*.js')
+  - dest('./minjs/')// 指定处理后的文件的输出路径.
+  - watch('./*.js',['任务名1','任务名2']);
+  - run('任务名');//执行指定的任务.
+
+### gulp的安装
+  - 使用npm 进行安装
+  - `npm install gulp-cli -g`;
+
+### gulp 使用
+
+#### 使用时还需要在项目中通过npm非全局安装gulp
+  - `npm install gulp --save-dev`
+
+#### 还需要在当前项目根目录添加一个gulpfile.js文件来写具体的任务代码.
+
+### gulp的一些插件
+  - 也是使用npm安装
+  - 对js代码进行压缩 gulp-uglify
+  - 对代码进行合并 gulp-concat
+  - 对css进行压缩 gulp-cssnano
+  - 对图片进行压缩 gulp-imagemin
+  - 对less进行编译 gulp-less
+  - 对html压缩 gulp-htmlmin
+  - html选择器 gulp-cheerio
+###项目结构
+```
+├─ /manmanmai/ ··················· 项目所在目录
+└─┬─ /css/ ······················· 我们自己的CSS文件
+  ├─ /fonts/ ······················ 使用到的字体文件
+  ├─ /images/ ······················· 使用到的图片文件
+  ├─ /js/ ························ 自己写的JS脚本
+  └─ /XXX.html ················· 所有页面文件
+```
+
+###本项目压缩实例gulpfile.js,build目录为压缩后代码
+```
+//引入所有所有包
+var gulp = require("gulp"),
+    less = require("gulp-less"),
+    cssnano = require("gulp-cssnano"),
+    uglify = require("gulp-uglify"),
+    cheerio = require('gulp-cheerio'),
+    imagemin = require('gulp-imagemin'),
+    htmlmin = require('gulp-htmlmin')
+    //编译less
+gulp.task("less", function() {
+        //获取要编译的less
+        return gulp.src("./css/**/*.less")
+            //将less编译成css    
+            .pipe(less())
+            //将css压缩
+            .pipe(cssnano())
+            //输出压缩后的结果
+            .pipe(gulp.dest("./build/css"));
+    })
+    //压缩js
+gulp.task("uglify", function() {
+        //获取要压缩的js
+        return gulp.src("./js/**/*.js")
+            //压缩js    
+            .pipe(uglify())
+            //输出压缩后的结果
+            .pipe(gulp.dest("./build/js"));
+    })
+    //压缩html,并修改引用
+gulp.task("html", function() {
+        //获取要修改引用的html
+        return gulp.src("./*.html")
+            //调用cheerio插件可以操作html里面的元素   
+            .pipe(cheerio(function($) {
+                //遍历link标签
+                for (var key in $("link")) {
+                    //$("link")对象中不以数字开头的不是link标签,如果访问rel和href属性会报错所以要排除
+                    if (isNaN(key)) break;
+                    //修改link标签里面的rel属性和href属性
+                    $("link")[key].attribs["rel"] = $("link")[key].attribs["rel"].replace('/less', "");
+                    $("link")[key].attribs["href"] = $("link")[key].attribs["href"].replace('less', "css");
+                }
+                //去掉引入编译less包的script标签
+                $("script[src='js/less.js']").remove();
+            }))
+            //压缩html
+            .pipe(htmlmin({ collapseWhitespace: true, removeComments: true }))
+            //输出html
+            .pipe(gulp.dest('./build'));
+    })
+    //压缩图片
+gulp.task("images", function() {
+        //获取要压缩的图片
+        return gulp.src("./images/**.**")
+            //压缩图片
+            .pipe(imagemin())
+            //输出图片
+            .pipe(gulp.dest("./build/images"));
+    })
+    //搬运字体
+gulp.task("fonts", function() {
+        return gulp.src("./fonts/**.**").pipe(gulp.dest("./build/fonts"));
+    })
+    //批量运行所有的任务,监听所有的修改然后自动打包
+gulp.task("default", ["less", "uglify", "html", "images", "fonts"], function() {
+    gulp.watch(["./css/**/*.less"], ["less"]);
+    gulp.watch(["./js/**/*.js"], ["uglify"]);
+    gulp.watch(["./*.html"], ["html"]);
+    gulp.watch(["./images/**.**"], ["images"]);
+    gulp.watch(["./fonts"], ["fonts"]);
+})
+```
+&copy;[@SingularityXD](https://github.com/SingularityXD) 转载请注明出处

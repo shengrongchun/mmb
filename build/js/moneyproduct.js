@@ -1,0 +1,1 @@
+"use strict";$(function(){function t(t,e){$.ajax({url:"http://127.0.0.1:9090/api/getmoneyctrlproduct?timestamp="+(new Date).getTime(),data:{productid:e},success:function(e){var c=template("moneyProduct",e);t.html(c)}})}t($(".money-product"),$.getQueryString("productid"))});

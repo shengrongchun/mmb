@@ -1,10 +1,3 @@
-/*
- * @Author: zhengwei
- * @Date:   2016-10-25 17:06:01
- * @Last Modified by:   zwxs
- * @Last Modified time: 2016-10-27 16:59:02
- */
-
 'use strict';
 $(function() {
     setMoneyCtrlProduct($('.money-ctrl'), $.getUrlParam('pageid') || 1);

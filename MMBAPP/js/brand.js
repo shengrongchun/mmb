@@ -1,10 +1,3 @@
-/*
- * @Author: zhengwei
- * @Date:   2016-10-24 10:19:37
- * @Last Modified by:   zwxs
- * @Last Modified time: 2016-11-04 17:17:43
- */
-
 'use strict';
 $(function() {
     setBrandList($('.brand-list'), $.getUrlParam("brandtitleid"))
@@ -70,23 +63,23 @@ $(function() {
             }
         })
     }
-    var data = { "message": "登录成功", "data": { "id": "402880fa57792d870157792e24630001", "invitationCode": "46621652", "status": 1, "isMember": 1 }, "status": 200 } { "message": "经核实您涉及虚假房源，目前被封号 将会在2016-10-15 14:02:58解封", "data": "2016-10-15 14:02:58", "status": 303 }
-    var gaimi = document.querySelector('a.xiugaimima');
-    gaimi.href = "gaimi.html?userid=" + data.data.id;
-    gaimi.html ? userid = wefsdfsdfsd24234;
-    var oldpas = document.querySelector('old').value;
-    var newpass = document.querySelector('new').value;
-    $.ajax({
-        url: 'http://localhost:8080/fangyuan/rest/api/member/doUpdatePassword',
-        data: {
-            userid: $.getUrlParam('userid'),
-            oldPassword: oldpas,
-            newPassword: newpass
-        },
-        success: function(data) {
-            alert(data.message);
-        }
-    });
+    //     var data = { "message": "登录成功", "data": { "id": "402880fa57792d870157792e24630001", "invitationCode": "46621652", "status": 1, "isMember": 1 }, "status": 200 } { "message": "经核实您涉及虚假房源，目前被封号 将会在2016-10-15 14:02:58解封", "data": "2016-10-15 14:02:58", "status": 303 }
+    //     var gaimi = document.querySelector('a.xiugaimima');
+    //     gaimi.href = "gaimi.html?userid=" + data.data.id;
+    //     gaimi.html ? userid = wefsdfsdfsd24234;
+    //     var oldpas = document.querySelector('old').value;
+    //     var newpass = document.querySelector('new').value;
+    //     $.ajax({
+    //         url: 'http://localhost:8080/fangyuan/rest/api/member/doUpdatePassword',
+    //         data: {
+    //             userid: $.getUrlParam('userid'),
+    //             oldPassword: oldpas,
+    //             newPassword: newpass
+    //         },
+    //         success: function(data) {
+    //             alert(data.message);
+    //         }
+    //     });
 });
 (function($) {
     $.getUrlParam = function(name) {

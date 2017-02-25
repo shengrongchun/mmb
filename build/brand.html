@@ -1,0 +1,58 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1"><link rel="stylesheet" href="css/base.css"><link rel="stylesheet" href="css/newstyle.css"><link rel="stylesheet" href="css/brand.css"></head><body><header id="header" class="header"><div class="logo"><a href="index.html" title="&#x6162;&#x6162;&#x4E70;"><img src="images/header_logo.png" alt=""></a></div><div class="appdown"><a href="javascript:if(confirm(%27http://m.manmanbuy.com/download/  \n\nThis file was not retrieved by Teleport Ultra, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://m.manmanbuy.com/download/%27" onclick="trackEvent(&apos;header&#x4E0B;&#x8F7D;&apos;);" title="&#x624B;&#x673A;app&#x4E0B;&#x8F7D;"><img src="images/header_app.png" alt="&#x624B;&#x673A;app&#x4E0B;&#x8F7D;"></a></div></header><section id="form-search"><form action="#" class="search"><input type="search" name="" id="" placeholder="&#x8BF7;&#x8F93;&#x5165;&#x4F60;&#x60F3;&#x6BD4;&#x4EF7;&#x7684;&#x5546;&#x54C1;"> <input type="button" value="&#x641C;&#x7D22;"></form></section><section id="category" class="model"><nav class="product-list-title"><a href="index.html" class="list-title1">&#x9996;&#x9875;</a> &gt; <a href="category.html" class="list-title2">&#x5168;&#x90E8;&#x5206;&#x7C7B;</a> &gt;</nav><div class="hd"><h3>&#x5E73;&#x677F;&#x7535;&#x89C6;&#x54EA;&#x4E2A;&#x724C;&#x5B50;&#x597D;</h3></div><div class="row clearfix brand-list"></div><div class="hd"><h3><a href="prolist.aspx?id=4">&#x5E73;&#x677F;&#x7535;&#x89C6;&#x4EA7;&#x54C1;&#x9500;&#x91CF;&#x6392;&#x884C;</a></h3></div><div class="product-list"></div><div class="hd"><h3><a href="listComment.aspx?id=4" title="&#x5E73;&#x677F;&#x7535;&#x89C6;&#x6700;&#x65B0;&#x8BC4;&#x8BBA;">&#x5E73;&#x677F;&#x7535;&#x89C6;&#x6700;&#x65B0;&#x8BC4;&#x8BBA;</a></h3></div><div class="bd pllist product-com"></div></section><footer id="ctl00_foot"><div class="foot_top"><a href="login.aspx.htm">&#x767B;&#x5F55;</a> <a href="login.aspx.htm">&#x6CE8;&#x518C;</a> <a href="#" style="width: 40%; border: 0"><img src="http://www.zuyushop.com/wap/images/top.jpg" width="15" height="15">&#x8FD4;&#x56DE;&#x9876;&#x90E8;</a></div><div class="footer"><p><a href="javascript:if(confirm(%27http://m.manmanbuy.com/download/  \n\nThis file was not retrieved by Teleport Ultra, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://m.manmanbuy.com/download/%27" onclick="trackEvent(&apos;footer&#x4E0B;&#x8F7D;&apos;);" style="color: Red">&#x624B;&#x673A;APP&#x4E0B;&#x8F7D;</a> <a href="index.htm" tppabs="http://m.manmanbuy.com/">&#x6162;&#x6162;&#x4E70;&#x624B;&#x673A;&#x7248;</a> -- &#x638C;&#x4E0A;&#x6BD4;&#x4EF7;&#x5E73;&#x53F0;</p><p>m.manmanbuy.com <img src="https://z11.cnzz.com/stat.htm-id=1256699064&amp;r=&amp;iw=1&amp;showp=0x0&amp;lg=undefined&amp;cnzz_eid=none&amp;p=http---m.manmanbuy.com-&amp;rnd=453668140.gif" width="0" height="0"></p></div></footer><script id="brandList" type="text/html"><!-- <ul>
+            {{each list as value i}}
+            <li>索引 {{i + 1}} ：{{value}}</li>
+            {{/each}}
+        </ul> -->
+        <ul class="category-title">
+            {{each result as value i}}
+            <li><a href="productlist.html?categoryid={{value.categoryId}}&pageid=1" title="三星平板电视"><em class="top{{i+1}}">{{i+1}}</em><div class="inner"><div class="tit">{{value.brandName}}</div><p>{{value.brandInfo}}</p></div></a></li>
+            {{/each}}
+        </ul></script><script id="brandProduct" type="text/html"><!-- <ul>
+            {{each list as value i}}
+            <li>索引 {{i + 1}} ：{{value}}</li>
+            {{/each}}
+        </ul> -->
+        <ul>
+            {{each result as value i}}
+            <li>
+                <a href="bijia.html?productid={{value.productId}}" title="{{value.productName}}">
+                    <div class="pic">{{#value.productImg}}</div>
+                    <div class="info">
+                        <div class="tit">{{value.productName}}</div>
+                        <div class="price"><em>{{value.productPrice}}</em> <span class="star"><em class="star5"></em></span></div>
+                        <div class="other"><em>{{value.productQuote}}</em><em>{{value.productCom}}</em></div>
+                    </div>
+                </a>
+            </li>
+            {{/each}}
+        </ul></script><script id="ProductCom" type="text/html"><!-- <ul>
+            {{each list as value i}}
+            <li>索引 {{i + 1}} ：{{value}}</li>
+            {{/each}}
+        </ul> -->
+        <ul>
+            {{each result as value i}}
+            <li>
+                <a href="bijia.aspx?id=211698">
+                    <div class="protit">
+                        <div class="pic"> {{#value.productImg}} </div>
+                        <div class="tit">{{value.productName}}</div>
+                    </div>
+                    <div class="plbox">
+                        <div class="name">{{value.comName}}：<span class="star"><em class="star5"></em></span><i>{{value.comTime}}</i></div>
+                        <div class="con">{{value.comContent}} 评论发布自 {{value.comFrom}}</div>
+                    </div>
+                </a>
+            </li>
+            {{/each}}
+        </ul></script><script>Array.prototype.unique = function() {
+            var res = [];
+            var json = {};
+            for (var i = 0; i < this.length; i++) {
+                if (!json[this[i]]) {
+                    res.push(this[i]);
+                    json[this[i]] = 1;
+                }
+            }
+            return res;
+        }</script><script src="js/template.js"></script><script src="js/jquery-1.12.3.min.js"></script><script src="js/brand.js"></script></body></html>

@@ -1,0 +1,1 @@
+"use strict";$(function(){function t(t,i){$.ajax({url:"http://127.0.0.1:9090/api/getinlanddiscount?timestamp="+(new Date).getTime(),success:function(i){var n=template("productList",i);t.html(n),$(".loading").hide()}})}t($(".inland-discount-list"))});

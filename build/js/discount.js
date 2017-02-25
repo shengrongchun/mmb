@@ -1,0 +1,1 @@
+"use strict";$(function(){function t(t,c,u){$.ajax({url:"http://127.0.0.1:9090/api/getdiscountproduct?timestamp="+(new Date).getTime(),data:{productid:c},success:function(c){var u=template("discountProduct",c);t.html(u)}})}t($(".discount-product"),$.getUrlParam("productid"))});

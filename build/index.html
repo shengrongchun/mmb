@@ -1,0 +1,23 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1"><link rel="stylesheet" href="css/base.css"><link rel="stylesheet" href="css/index.css"><link rel="stylesheet" href="css/moneyctrl.css"></head><body><header id="header" class="header"><div class="logo"><a href="index.html" title="&#x6162;&#x6162;&#x4E70;"><img src="images/header_logo.png" alt=""></a></div><div class="appdown"><a href="javascript:window.location=%27http://m.manmanbuy.com/download/%27" onclick="trackEvent(&apos;header&#x4E0B;&#x8F7D;&apos;);" title="&#x624B;&#x673A;app&#x4E0B;&#x8F7D;"><img src="images/header_app.png" alt="&#x624B;&#x673A;app&#x4E0B;&#x8F7D;"></a></div></header><section id="form-search"><form action="#" class="search"><input type="search" name="" id="" placeholder="&#x8BF7;&#x8F93;&#x5165;&#x4F60;&#x60F3;&#x6BD4;&#x4EF7;&#x7684;&#x5546;&#x54C1;"> <input type="button" value="&#x641C;&#x7D22;"></form></section><section id="menu"><div class="row clearfix"></div></section><section id="recommen" class="list-title"><div class="list-title-content"><span>&#x8D85;&#x503C;&#x6298;&#x6263;&#x63A8;&#x8350;</span> <img src="http://www.zuyushop.com/wap/images/more.png" width="20" height="20"></div></section><main id="recommen-product"><div class="recommen-product-list product-list cu-list"></div></main><section id="recommen" class="list-title"><div class="list-title-content"><span>&#x54C1;&#x724C;&#x6392;&#x884C;</span> <img src="http://www.zuyushop.com/wap/images/more.png" width="20" height="20"></div></section><footer id="ctl00_foot"><div class="foot_top"><a href="login.aspx.htm">&#x767B;&#x5F55;</a> <a href="login.aspx.htm">&#x6CE8;&#x518C;</a> <a href="#" style="width: 40%; border: 0"><img src="http://www.zuyushop.com/wap/images/top.jpg" width="15" height="15">&#x8FD4;&#x56DE;&#x9876;&#x90E8;</a></div><div class="footer"><p><a href="javascript:if(confirm(%27http://m.manmanbuy.com/download/  \n\nThis file was not retrieved by Teleport Ultra, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://m.manmanbuy.com/download/%27" onclick="trackEvent(&apos;footer&#x4E0B;&#x8F7D;&apos;);" style="color: Red">&#x624B;&#x673A;APP&#x4E0B;&#x8F7D;</a> <a href="index.htm" tppabs="http://m.manmanbuy.com/">&#x6162;&#x6162;&#x4E70;&#x624B;&#x673A;&#x7248;</a> -- &#x638C;&#x4E0A;&#x6BD4;&#x4EF7;&#x5E73;&#x53F0;</p><p>m.manmanbuy.com <img src="https://z11.cnzz.com/stat.htm-id=1256699064&amp;r=&amp;iw=1&amp;showp=0x0&amp;lg=undefined&amp;cnzz_eid=none&amp;p=http---m.manmanbuy.com-&amp;rnd=453668140.gif" width="0" height="0"></p></div></footer><script id="moneyCtrl" type="text/html"><ul>
+            {{each result as value i}}
+            <li class="clearfix ui-border-b">
+                <a href="moneyproduct.html?productid={{value.productId}}">
+                    <div class="pic">{{#value.productImgSm}}</div>
+                    <div class="clearfix info">
+                        <div class="title">{{value.productName}}<span>{{value.productPinkage}}</span></div>
+                        <div class="other"><span class="mall">{{value.productFrom}} | {{value.productTime}}</span><span class="comment"><i class="icon-comment"></i>{{value.productComCount.replace("有","").replace("人评论","")}}</span></div>
+                    </div>
+                </a>
+            </li>
+            {{/each}}
+        </ul>
+        <div class="more-bar">
+            <a href="moneyctrl.html">更多优惠信息 »</a>
+        </div></script><script src="js/template.js"></script><script src="js/jquery-1.12.3.min.js"></script><script src="js/index.js"></script><script type="text/html" id="menudata">{{each result as value}}
+        <div class="menu-item">
+            <a href="{{value.titlehref}}">
+                {{#value.img}}
+                <p>{{value.name}}</p>
+            </a>
+        </div>
+        {{/each}}</script></body></html>

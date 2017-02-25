@@ -1,10 +1,3 @@
-/*
- * @Author: zhengwei
- * @Date:   2016-10-19 17:07:19
- * @Last Modified by:   zwxs
- * @Last Modified time: 2016-10-27 22:51:21
- */
-
 'use strict';
 $(function() {
     setMenu($('#menu > .row'));

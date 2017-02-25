@@ -1,10 +1,3 @@
-/*
- * @Author: zhengwei
- * @Date:   2016-10-23 15:57:22
- * @Last Modified by:   zwxs
- * @Last Modified time: 2016-10-27 16:57:53
- */
-
 'use strict';
 $(function() {
     setCategoryTitle($('#category > .row'));

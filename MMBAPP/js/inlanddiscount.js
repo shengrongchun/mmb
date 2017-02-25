@@ -1,10 +1,3 @@
-/*
- * @Author: zhengwei
- * @Date:   2016-10-24 22:14:54
- * @Last Modified by:   zwxs
- * @Last Modified time: 2016-10-29 11:53:14
- */
-
 'use strict';
 $(function() {
     setProductList($('.inland-discount-list'))

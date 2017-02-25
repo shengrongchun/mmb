@@ -1,0 +1,1 @@
+"use strict";$(function(){function t(t,e){$.ajax({url:"http://127.0.0.1:9090/api/getcoupon?timestamp="+(new Date).getTime(),success:function(e){var n=template("couponTitle",e);t.html(n)}})}t($(".coupon-title"))});

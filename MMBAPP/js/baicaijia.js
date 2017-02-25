@@ -1,10 +1,3 @@
-/*
- * @Author: zhengwei
- * @Date:   2016-10-26 13:49:47
- * @Last Modified by:   zwxs
- * @Last Modified time: 2016-10-28 15:55:43
- */
-
 'use strict';
 $(function() {
     setTitle($('.bcj-title'), $.getUrlParam('titleid'));

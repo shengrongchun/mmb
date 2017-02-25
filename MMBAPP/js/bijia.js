@@ -1,10 +1,3 @@
-/*
- * @Author: zhengwei
- * @Date:   2016-10-20 14:07:01
- * @Last Modified by:   zwxs
- * @Last Modified time: 2016-10-27 16:57:14
- */
-
 'use strict';
 $(function() {
     setProductListTitle($('.product-list-title'), $.getUrlParam('productid'));

@@ -1,10 +1,3 @@
-/*
- * @Author: zhengwei
- * @Date:   2016-10-19 17:07:19
- * @Last Modified by:   zwxs
- * @Last Modified time: 2016-10-27 18:52:10
- */
-
 'use strict';
 $(function() {
 
@@ -54,8 +47,10 @@ $(function() {
             })
         })
         $(dom).on('click', function() {
-            $('.category-title').find("ul").fadeOut();
             $(this).parent().find('ul').fadeToggle();
+            $(this).parent().siblings().find("ul").fadeOut();
+
+
         })
     }
 });
